@@ -9,7 +9,7 @@
 using std::cout, std::endl, std::function, std::nullopt, std::optional, std::string, std::vector;
 
 template<typename Keyable>
-class LinearProbing {
+class QuadraticProbing {
 private:
     enum state {EMPTY, FILLED, REMOVED};
     struct hashable {
@@ -68,7 +68,7 @@ private:
 
 public:
     // Constructor
-    LinearProbing(unsigned long tableSize, function<string(Keyable)> getKey) {
+    QuadraticProbing(unsigned long tableSize, function<string(Keyable)> getKey) {
         // This will fill the table with default Keyables and EMPTY statuses
         table.resize(nextPrime(tableSize));
         this->getKey = getKey;
@@ -76,7 +76,7 @@ public:
     }
 
     // Insert
-    void insert(Keyable item) {
+    void insert(Keyable item, int &numReads) {
         // Get the key from the item
         string key = getKey(item);
         if (!find(key)) {
@@ -85,10 +85,11 @@ public:
             // Probe until we find a non-filled index
             while (table[index].status == FILLED) {
                 // Add one to the index for linear probing
-                index += 1;
+                index = index * index;
                 index %= table.size();
             }
             table[index].item = item;
+            numReads += 1;
             if (table[index].status == EMPTY) {
                 ++numItems;
                 table[index].status = FILLED;
@@ -103,17 +104,19 @@ public:
     }
 
     // Find
-    optional<Keyable> find(string key) const {
+    optional<Keyable> find(string key, int &numReads) const {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
         while (table[index].status != EMPTY) {
+            numReads += 1;
             // Check the index to see if the key matches
             if (table[index].status == FILLED && getKey(table[index].item) == key) {
                 // We found the item
                 return table[index].item;
             }
+
             // Add one to the index for linear probing
-            index += 1;
+            index = index * index;
             index %= table.size();
         }
         // We didn't find the item
@@ -121,11 +124,12 @@ public:
     }
 
     // Remove
-    bool remove(string key) {
+    bool remove(string key, int &numReads) {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
         while (table[index].status != EMPTY) {
             // Check the index to see if the key matches
+            numReads +=1;
             if (table[index].status == FILLED && getKey(table[index].item) == key) {
                 // We found the item
                 // Remove it
@@ -134,7 +138,7 @@ public:
                 return true;
             }
             // Add one to the index for linear probing
-            index += 1;
+            index = index * index;
             index %= table.size();
         }
         // We didn't find the item

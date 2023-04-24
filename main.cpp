@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <fstream>
 #include <vector>
+#include "string.h"
 
 using namespace std;
 
@@ -21,16 +22,21 @@ int getTotalVideoCount(vector<Subscribe> subs)
 
 }
 
+string getKey(Subscribe subs){
+    return (subs.getChannel());
+}
+
+string getKey2(Subscribe subs){
+    return to_string(subs.getRank());
+}
 // main function
 int main() {
     // entire file vector
     vector<Subscribe> subs;
-
     getDataFromFile("../topSubscribed.csv", subs);
-    for (int i = 0; i < 1000; ++i)
-    {
-        cout << subs[i] << endl;
-    }
+
+
+
 
 
 
