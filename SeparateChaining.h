@@ -43,18 +43,20 @@ private:
 
 public:
     // Constructor
-    SeparateChaining(unsigned long tableSize, function<string(Keyable)> getKey) {
+    SeparateChaining(unsigned long tableSize, function<string(Keyable)> getKey, int &numReads) {
+        this->numReads;
+        this->tableSize = nextPrime(tableSize);
         // This will fill the table with empty lists
         table.resize(nextPrime(tableSize));
         this->getKey = getKey;
     }
 
     // Insert
-    bool insert(Keyable item) {
+    bool insert(Keyable item, int &numReads ) {
         // Get the key from the item
         string key = getKey(item);
         // If the item is already in the table, do not insert it
-        if (!find(key)) {
+        if (!find(key, numReads)) {
             // Hash the key to get an index
             unsigned long index = hornerHash(key);
             // Put the item at that index in the table
@@ -65,11 +67,12 @@ public:
     }
 
     // Find
-    optional<Keyable> find(string key) const {
+    optional<Keyable> find(string key, int &numReads) const {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
         // Check each item in the list at the index to see if the key matches
         for (auto it = table[index].begin(); it != table[index].end(); ++it) {
+            numReads +=1;
             if (getKey(*it) == key) {
                 // We found the item
                 return *it;
@@ -80,11 +83,12 @@ public:
     }
 
     // Remove
-    bool remove(string key) {
+    bool remove(string key, int &numReads) {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
         // Check each item in the list at the index to see if the key matches
         for (auto it = table[index].begin(); it != table[index].end(); ++it) {
+            numReads +=1;
             if (getKey(*it) == key) {
                 // We found the item
                 // Remove the item
