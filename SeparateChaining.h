@@ -15,6 +15,8 @@ private:
     vector<list<Keyable>> table;
     function<string(Keyable)> getKey;
 
+    int numReads = 0;
+
     unsigned long hornerHash(string key) const {
         unsigned long hashVal = 0;
         for (char letter : key) {
@@ -44,8 +46,8 @@ private:
 public:
     // Constructor
     SeparateChaining(unsigned long tableSize, function<string(Keyable)> getKey, int &numReads) {
-        this->numReads;
-        this->tableSize = nextPrime(tableSize);
+        this->numReads = numReads;
+        tableSize = nextPrime(tableSize);
         // This will fill the table with empty lists
         table.resize(nextPrime(tableSize));
         this->getKey = getKey;
