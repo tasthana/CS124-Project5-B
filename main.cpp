@@ -35,6 +35,9 @@ int main() {
     vector<Subscribe> subs;
     getDataFromFile("../topSubscribed.csv", subs);
 
+    int numRead =0;
+
+
 
 
 
