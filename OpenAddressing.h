@@ -19,6 +19,7 @@ private:
     vector<hashable> table;
     function<string(Keyable)> getKey;
     unsigned long numItems;
+    unsigned long tablesize;
 
     unsigned long hornerHash(string key) const {
         unsigned long hashVal = 0;
@@ -53,9 +54,9 @@ private:
         // Empty the table
         table.clear();
         numItems = 0;
-
+        tablesize = nextPrime(oldTable.size() * 2);
         // Resize the table to new size
-        table.resize(nextPrime(oldTable.size() * 2));
+        table.resize(tablesize);
 
         // Reinsert all FILLED items
         int numReads = 0;
@@ -73,9 +74,13 @@ public:
         // This will fill the table with default Keyables and EMPTY statuses
         table.resize(nextPrime(tableSize));
         this->getKey = getKey;
+        this->tablesize = tableSize;
         numItems = 0;
     }
 
+    unsigned long getTableSize() {
+        return tablesize;
+    }
     // Insert
     void insert(Keyable item, int &numReads) {
         // Get the key from the item
@@ -92,7 +97,7 @@ public:
                 index %= table.size();
             }
             table[index].item = item;
-            numReads += 1;
+//            numReads += 1;
             if (table[index].status == EMPTY) {
                 ++numItems;
                 table[index].status = FILLED;

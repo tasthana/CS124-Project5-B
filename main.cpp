@@ -51,7 +51,7 @@ int main() {
     SeparateChaining<Subscribe> sepChain5(3000, getKey, numReads);
 
     // Separate Chaining Tables using key2
-    SeparateChaining<Subscribe> sepChain6(1000, getKey2, numReads);
+    SeparateChaining<Subscribe> sepChain6(923, getKey2, numReads);
     SeparateChaining<Subscribe> sepChain7(1500, getKey2, numReads);
     SeparateChaining<Subscribe> sepChain8(2000, getKey2, numReads);
     SeparateChaining<Subscribe> sepChain9(2500, getKey2, numReads);
@@ -252,15 +252,17 @@ int main() {
         quadProb1.insert(subs[i], numReads);
         if (f_outQ1) {
             // use get num reads function
-            f_outQ1 << "Quad Prob 1000" << " : ";
+            f_outQ1 << "Quad Prob 923" << " : ";
             f_outQ1 << numReads << endl;
 
         }
         numReads = 0;
     }
+    cout << quadProb1.getTableSize() << endl;
     f_outQ1.close();
 
-    // open quad file 1
+
+    // open quad file 2
     ofstream f_outQ2;
     f_outQ2.open("../QuadProb2.csv ");
 
@@ -275,9 +277,139 @@ int main() {
         }
         numReads = 0;
     }
+    cout << quadProb2.getTableSize() << endl;
     f_outQ2.close();
 
 
+    // open quad file 3
+    ofstream f_outQ3;
+    f_outQ3.open("../QuadProb3.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb3.insert(subs[i], numReads);
+        if (f_outQ3) {
+            // use get num reads function
+            f_outQ3 << "Quad Prob 2000" << " : ";
+            f_outQ3 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb3.getTableSize() << endl;
+    f_outQ3.close();
+
+    // open quad file 4
+    ofstream f_outQ4;
+    f_outQ4.open("../QuadProb4.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb4.insert(subs[i], numReads);
+        if (f_outQ4) {
+            // use get num reads function
+            f_outQ4 << "Quad Prob 2500" << " : ";
+            f_outQ4 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb4.getTableSize() << endl;
+    f_outQ4.close();
+
+    // open quad file 5
+    ofstream f_outQ5;
+    f_outQ5.open("../QuadProb5.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb5.insert(subs[i], numReads);
+        if (f_outQ5) {
+            // use get num reads function
+            f_outQ5 << "Quad Prob 3000" << " : ";
+            f_outQ5 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb5.getTableSize() << endl;
+    f_outQ5.close();
+
+    // open quad file 6
+    ofstream f_outQ6;
+    f_outQ6.open("../QuadProb6.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb6.insert(subs[i], numReads);
+        if (f_outQ6) {
+            // use get num reads function
+            f_outQ6 << "Quad Prob 923" << " : ";
+            f_outQ6 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb6.getTableSize() << endl;
+    f_outQ6.close();
+
+
+    // open quad file 7
+    ofstream f_outQ7;
+    f_outQ7.open("../QuadProb7.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb7.insert(subs[i], numReads);
+        if (f_outQ7) {
+            // use get num reads function
+            f_outQ7 << "Quad Prob 1500" << " : ";
+            f_outQ7 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb7.getTableSize() << endl;
+    f_outQ7.close();
+
+    // open quad file 8
+    ofstream f_outQ8;
+    f_outQ8.open("../QuadProb8.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb8.insert(subs[i], numReads);
+        if (f_outQ8) {
+            // use get num reads function
+            f_outQ8 << "Quad Prob 2000" << " : ";
+            f_outQ8 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb8.getTableSize() << endl;
+    f_outQ8.close();
+
+    // open quad file 9
+    ofstream f_outQ9;
+    f_outQ9.open("../QuadProb10.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb9.insert(subs[i], numReads);
+        if (f_outQ9) {
+            // use get num reads function
+            f_outQ9 << "Quad Prob 2500" << " : ";
+            f_outQ9 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb9.getTableSize() << endl;
+    f_outQ9.close();
+
+
+    // open quad file 10
+    ofstream f_outQ10;
+    f_outQ10.open("../QuadProb10.csv ");
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb10.insert(subs[i], numReads);
+        if (f_outQ10) {
+            // use get num reads function
+            f_outQ10 << "Quad Prob 2500" << " : ";
+            f_outQ10 << numReads << endl;
+        }
+        numReads = 0;
+    }
+    cout << quadProb10.getTableSize() << endl;
+    f_outQ10.close();
 
 
 
