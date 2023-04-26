@@ -58,9 +58,10 @@ private:
         table.resize(nextPrime(oldTable.size() * 2));
 
         // Reinsert all FILLED items
+        int numReads = 0;
         for (int i = 0; i < oldTable.size(); ++i) {
             if (oldTable[i].status == FILLED) {
-                insert(oldTable[i].item);
+                insert(oldTable[i].item, numReads);
             }
         }
 
@@ -79,7 +80,7 @@ public:
     void insert(Keyable item, int &numReads) {
         // Get the key from the item
         string key = getKey(item);
-        if (!find(key)) {
+        if (!find(key, numReads)) {
             // Hash the key to get an index
             unsigned long index = hornerHash(key);
             // Probe until we find a non-filled index
