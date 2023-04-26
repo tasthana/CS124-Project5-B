@@ -84,9 +84,11 @@ public:
             // Hash the key to get an index
             unsigned long index = hornerHash(key);
             // Probe until we find a non-filled index
+            int num = 1;
             while (table[index].status == FILLED) {
                 // Add one to the index for linear probing
-                index = index * index;
+                index += num * num;
+                ++num;
                 index %= table.size();
             }
             table[index].item = item;
@@ -108,6 +110,7 @@ public:
     optional<Keyable> find(string key, int &numReads) const {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
+        int num = 1;
         while (table[index].status != EMPTY) {
             numReads += 1;
             // Check the index to see if the key matches
@@ -117,7 +120,8 @@ public:
             }
 
             // Add one to the index for linear probing
-            index = index * index;
+            index += num * num;
+            ++num;
             index %= table.size();
         }
         // We didn't find the item
@@ -128,6 +132,7 @@ public:
     bool remove(string key, int &numReads) {
         // Hash the key to get an index
         unsigned long index = hornerHash(key);
+        int num = 1;
         while (table[index].status != EMPTY) {
             // Check the index to see if the key matches
             numReads +=1;
@@ -139,7 +144,8 @@ public:
                 return true;
             }
             // Add one to the index for linear probing
-            index = index * index;
+            index += num * num;
+            ++num;
             index %= table.size();
         }
         // We didn't find the item

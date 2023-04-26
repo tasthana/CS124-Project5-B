@@ -248,18 +248,35 @@ int main() {
     f_outQ1.open("../QuadProb1.csv ");
 
     // Single loop to add everything into tables
-    for (int i = 100; i < subs.size(); i++) {
+    for (int i = 0; i < subs.size(); i++) {
         quadProb1.insert(subs[i], numReads);
         if (f_outQ1) {
             // use get num reads function
             f_outQ1 << "Quad Prob 1000" << " : ";
             f_outQ1 << numReads << endl;
+
         }
         numReads = 0;
-        cout << "hello" << endl;
-        cout << i << endl;
     }
     f_outQ1.close();
+
+    // open quad file 1
+    ofstream f_outQ2;
+    f_outQ2.open("../QuadProb2.csv ");
+
+    // Single loop to add everything into tables
+    for (int i = 0; i < subs.size(); i++) {
+        quadProb2.insert(subs[i], numReads);
+        if (f_outQ2) {
+            // use get num reads function
+            f_outQ2 << "Quad Prob 1500" << " : ";
+            f_outQ2 << numReads << endl;
+
+        }
+        numReads = 0;
+    }
+    f_outQ2.close();
+
 
 
 
