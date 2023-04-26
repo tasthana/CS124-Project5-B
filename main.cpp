@@ -258,7 +258,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb1.getTableSize() << endl;
+    cout << "table 1 size :" << quadProb1.getTableSize() << endl;
     f_outQ1.close();
 
 
@@ -277,7 +277,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb2.getTableSize() << endl;
+    cout << "table 2 size :" <<quadProb2.getTableSize() << endl;
     f_outQ2.close();
 
 
@@ -294,7 +294,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb3.getTableSize() << endl;
+    cout << "table 3 size :" <<quadProb3.getTableSize() << endl;
     f_outQ3.close();
 
     // open quad file 4
@@ -310,7 +310,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb4.getTableSize() << endl;
+    cout << "table 4 size :" <<quadProb4.getTableSize() << endl;
     f_outQ4.close();
 
     // open quad file 5
@@ -326,7 +326,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb5.getTableSize() << endl;
+    cout << "table 5 size :" <<quadProb5.getTableSize() << endl;
     f_outQ5.close();
 
     // open quad file 6
@@ -342,7 +342,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb6.getTableSize() << endl;
+    cout << "table 6 size :" <<quadProb6.getTableSize() << endl;
     f_outQ6.close();
 
 
@@ -359,7 +359,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb7.getTableSize() << endl;
+    cout <<  "table 7 size :" << quadProb7.getTableSize() << endl;
     f_outQ7.close();
 
     // open quad file 8
@@ -375,7 +375,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb8.getTableSize() << endl;
+    cout << "table 8 size :" <<quadProb8.getTableSize() << endl;
     f_outQ8.close();
 
     // open quad file 9
@@ -391,7 +391,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb9.getTableSize() << endl;
+    cout << "table 9 size :" <<quadProb9.getTableSize() << endl;
     f_outQ9.close();
 
 
@@ -408,7 +408,7 @@ int main() {
         }
         numReads = 0;
     }
-    cout << quadProb10.getTableSize() << endl;
+    cout << "table 10 size :" << quadProb10.getTableSize() << endl;
     f_outQ10.close();
 
 
