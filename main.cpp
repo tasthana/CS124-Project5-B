@@ -81,7 +81,6 @@ int main() {
         sepChain1.insert(subs[i], numReads);
         if (f_out) {
             // use get num reads function
-            f_out << "SepChain 918" << " : ";
             f_out << numReads << endl;
         }
         numReads = 0;
@@ -98,7 +97,6 @@ int main() {
         sepChain2.insert(subs[i], numReads);
         if (f_out2) {
             // use get num reads function
-            f_out2 << "SepChain 1500" << " : ";
             f_out2 << numReads << endl;
         }
         numReads = 0;
@@ -115,7 +113,6 @@ int main() {
         sepChain3.insert(subs[i], numReads);
         if (f_out3) {
             // use get num reads function
-            f_out3 << "SepChain 2000" << " : ";
             f_out3 << numReads << endl;
         }
         numReads = 0;
@@ -132,7 +129,6 @@ int main() {
         sepChain4.insert(subs[i], numReads);
         if (f_out4) {
             // use get num reads function
-            f_out4 << "SepChain 2500" << " : ";
             f_out4 << numReads << endl;
         }
         numReads = 0;
@@ -149,7 +145,6 @@ int main() {
         sepChain5.insert(subs[i], numReads);
         if (f_out5) {
             // use get num reads function
-            f_out5 << "SepChain 3000" << " : ";
             f_out5 << numReads << endl;
         }
         numReads = 0;
@@ -166,7 +161,6 @@ int main() {
         sepChain6.insert(subs[i], numReads);
         if (f_out6) {
             // use get num reads function
-            f_out6 << "SepChain 1000" << " : ";
             f_out6 << numReads << endl;
         }
         numReads = 0;
@@ -183,7 +177,6 @@ int main() {
         sepChain7.insert(subs[i], numReads);
         if (f_out7) {
             // use get num reads function
-            f_out7 << "SepChain 1500" << " : ";
             f_out7 << numReads << endl;
         }
         numReads = 0;
@@ -200,7 +193,6 @@ int main() {
         sepChain8.insert(subs[i], numReads);
         if (f_out8) {
             // use get num reads function
-            f_out8 << "SepChain 2000" << " : ";
             f_out8 << numReads << endl;
         }
         numReads = 0;
@@ -217,7 +209,6 @@ int main() {
         sepChain9.insert(subs[i], numReads);
         if (f_out9) {
             // use get num reads function
-            f_out9 << "SepChain 2500" << " : ";
             f_out9 << numReads << endl;
         }
         numReads = 0;
@@ -234,7 +225,6 @@ int main() {
         sepChain10.insert(subs[i], numReads);
         if (f_out10) {
             // use get num reads function
-            f_out10 << "SepChain 3000" << " : ";
             f_out10 << numReads << endl;
         }
         numReads = 0;
@@ -252,7 +242,6 @@ int main() {
         quadProb1.insert(subs[i], numReads);
         if (f_outQ1) {
             // use get num reads function
-            f_outQ1 << "Quad Prob 923" << " : ";
             f_outQ1 << numReads << endl;
 
         }
@@ -271,7 +260,6 @@ int main() {
         quadProb2.insert(subs[i], numReads);
         if (f_outQ2) {
             // use get num reads function
-            f_outQ2 << "Quad Prob 1500" << " : ";
             f_outQ2 << numReads << endl;
 
         }
@@ -289,7 +277,6 @@ int main() {
         quadProb3.insert(subs[i], numReads);
         if (f_outQ3) {
             // use get num reads function
-            f_outQ3 << "Quad Prob 2000" << " : ";
             f_outQ3 << numReads << endl;
         }
         numReads = 0;
@@ -305,7 +292,6 @@ int main() {
         quadProb4.insert(subs[i], numReads);
         if (f_outQ4) {
             // use get num reads function
-            f_outQ4 << "Quad Prob 2500" << " : ";
             f_outQ4 << numReads << endl;
         }
         numReads = 0;
@@ -321,7 +307,6 @@ int main() {
         quadProb5.insert(subs[i], numReads);
         if (f_outQ5) {
             // use get num reads function
-            f_outQ5 << "Quad Prob 3000" << " : ";
             f_outQ5 << numReads << endl;
         }
         numReads = 0;
@@ -337,7 +322,6 @@ int main() {
         quadProb6.insert(subs[i], numReads);
         if (f_outQ6) {
             // use get num reads function
-            f_outQ6 << "Quad Prob 923" << " : ";
             f_outQ6 << numReads << endl;
         }
         numReads = 0;
@@ -354,7 +338,6 @@ int main() {
         quadProb7.insert(subs[i], numReads);
         if (f_outQ7) {
             // use get num reads function
-            f_outQ7 << "Quad Prob 1500" << " : ";
             f_outQ7 << numReads << endl;
         }
         numReads = 0;
@@ -370,7 +353,6 @@ int main() {
         quadProb8.insert(subs[i], numReads);
         if (f_outQ8) {
             // use get num reads function
-            f_outQ8 << "Quad Prob 2000" << " : ";
             f_outQ8 << numReads << endl;
         }
         numReads = 0;
@@ -386,7 +368,6 @@ int main() {
         quadProb9.insert(subs[i], numReads);
         if (f_outQ9) {
             // use get num reads function
-            f_outQ9 << "Quad Prob 2500" << " : ";
             f_outQ9 << numReads << endl;
         }
         numReads = 0;
@@ -403,7 +384,6 @@ int main() {
         quadProb10.insert(subs[i], numReads);
         if (f_outQ10) {
             // use get num reads function
-            f_outQ10 << "Quad Prob 2500" << " : ";
             f_outQ10 << numReads << endl;
         }
         numReads = 0;

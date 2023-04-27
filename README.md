@@ -50,18 +50,41 @@ If you choose the extra credit option, clearly label the results and analysis in
 ## Report
 Include the following in this section of your README.md file:
 * Information about your data set. You will be assigned a different grader for this project.
+* I have seven total attributes in this dataset, it's all about the top 1000 Youtube Channels!
+* Rank, which is decided by number of subscribers per channel on Youtube. 
+* Youtube Channel, which is the name of the channel. 
+* Subscribers, which gives us the number of subs per channel. 
+* Video Views, the total amount of times an audience views a video. 
+* Video Counts, the number of videos a channel has. 
+* Category, which is a youtube stat to define which category each channel falls into. 
+* Started is the year that the channel was started.
+
+
 * Create graphs for the number of reads for inserting your dataset into all 20 hash tables.
   * Clearly label the graph titles and axes.
-  * Set up the graph in a way that makes the most sense to you. Here are some options I have seen before:
-    * Using a line graph to track the *individual* read counts as each insertion is made. High-valued blips happen in open addressing when rehashes occur.
-    * Using a line graph to track the *cumulative* read count as each insertion is made. Vertical jumps happen in open addressing when rehashes occur.
-    * Using a line graph to track the *average* number of reads per insertion, where each hash table has one value and you can see the trends as the initial table size grows.
+  * All graphs are in my repository. Was able to to title each one, but for some reason MacOS and Microsoft 365 doesn't allow me to actuall edit axis titles 
+  * X axis on all graphs are counts, and y axis are the highest number of rehashing that were accounted for.
+  * Used a line graph to track the *individual* read counts as each insertion is made. High-valued blips happen in open addressing when rehashes occur.
+
 * Using the graphs, analyze how the number of reads change as the hash table size grows.
-  * For the open addressing tables that have to rehash, you may also find it helpful to calculate the average reads excluding the one when the rehash takes place (for fairer comparison with the separate chaining tables).
+  *  As the hash tables grow in size, the number of reads seem to consistently increase and remain higher. 
+  *  I reset my sizes as the hash tables switched keys, and the difference between the lower sizes (923 - 2000) were spiky and not really consistent. 
+  *  The tables that were 2500 & 3000 sizes were consistently higher in both Seperate Chaining and Opening Addressing. 
+  * The number of reads in Quadratic Probing do top out on a higher number then Seperate Chaining. 
+  
 * Determine which getKey function works best on your dataset based on the read counts.
+  * I believe that the "Rank" getKey function works better on my data based, after analyzing the number of reads when that getKey fucntion is used. 
+  * The number of reads are consistently higher then with my first getKey function. 
+
 * Draw conclusions about which hash collision detection method works best on your dataset (separate chaining or open addressing).
+  * I believe that Open Addressing works best on my dataset. The fact that my dataset is currently at 1000, but is only used at 918 total points, makes it a fairly large dataset.
+  * Open address seems to work better when the table sizes are larger, and seperate chaining works better on the smaller sizes.  
 
 **Note: Any code that was not authored by yourself or the instructor must be cited in your report. This includes the use of concepts not taught in lecture.**
+
+* big note : my dataset prints out a full 1000 units of data but for some reason it stops at 918. It's been this way for the past couple of projects and none of the TA's have been able to figure it out. 
+* I didn't get points off on Project 3 and I hope it's the same this project. Seems to be no fault of coding and no one can figure it out. 
+
 
 ## Submit
 You must include your source (all .cpp and .h) files, your data (.csv) file(s), your output file(s), CMakeLists.txt, and your updated README.md file that contains your report to your repository. Submit to Gradescope using the GitHub repository link, double-check that all the correct files are there, and wait for the autograder to provide feedback.
